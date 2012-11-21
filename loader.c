@@ -19,7 +19,7 @@ pid_t try_fork() {
 void my_load(void) {
 	uint32_t INJECT_STARSIGN = 0, STAROFF = 0;
 
-	// Get ADOM version number, set by Sage
+	// Get ADOM version number
 	char *version = getenv("ADOM_VERSION");
 	int adom_version = 0;
 

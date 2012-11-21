@@ -5,7 +5,7 @@ void starsign_select() {
 	uint32_t BIRTHSIGN_ADDR = 0;
 	uint32_t JUMP_TO = 0;
 
-	// Get ADOM version number, set by Sage
+	// Get ADOM version number
 	char *version = getenv("ADOM_VERSION");
 	int adom_version = 0;
 

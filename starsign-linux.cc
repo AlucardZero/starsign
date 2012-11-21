@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
 
   if (result == -1)
   {
-    printf("adom-sage: Unable to load ADOM Sage\n");
+    printf("Unable to load starsign.so\n");
     exit(1);
   }
 
@@ -86,6 +86,6 @@ int main (int argc, char *argv[])
 
   adom_argv[i] = NULL;
   execvp(adom_path.c_str(), adom_argv);
-  perror("adom-sage: Unable to run ADOM");
+  perror("starsign: Unable to run ADOM");
   exit(1);
 }
