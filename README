@@ -8,5 +8,8 @@ Usage:
 Place adom-linux-starsign in the same directory as adom, cd to that directory,
 Then run: ./adom-linux-starsign
 
+Compiling:
+Type 'make'.
+
 Code stripped down from ADOM Sage
 
