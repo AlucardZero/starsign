@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
 
   if (result == -1)
   {
-    printf("Unable to load starsign.so\n");
+    printf("Unable to change LD_PRELOAD\n");
     exit(1);
   }
 
