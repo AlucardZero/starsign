@@ -1,6 +1,12 @@
 Starsign selector for ADOM Linux
+
 ADOM 1.0.0, 1.1.1, and 1.2.0p3+ supported
-Where applicable (1.2.0p3+), the Debian 32-bit version MUST be used
-Usage: ./adom-linux-starsign
+
+Where applicable (1.2.0p3+), the Debian 32-bit version MUST be used.
+
+Usage:
+Place adom-linux-starsign in the same directory as adom, cd to that directory,
+Then run: ./adom-linux-starsign
+
 Code stripped down from ADOM Sage
 
