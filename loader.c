@@ -50,7 +50,7 @@ void my_load(void) {
         }
 
 	if (INJECT_STARSIGN == 0) {
-		printf("ERROR:\nDon't know where to inject a function to.  Unknown ADOM version %i?\nTry the 32-bit Debian version.\n", adom_version);
+		printf("ERROR:\nDon't know where to inject my starsign function to.\nUnknown ADOM version %i? Try the 32-bit Debian version.\n", adom_version);
 		return;
 	}
 
