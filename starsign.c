@@ -1,10 +1,10 @@
 #include "jaakkos.h"
 
 /*
-  This is the starsign selector hook callback.
-  Ask the user for a month and randomize the day in that month.
-  Alternatively, completely randomize the day ('?').
-*/ 
+   This is the starsign selector hook callback.
+   Ask the user for a month and randomize the day in that month.
+   Alternatively, completely randomize the day ('?').
+ */ 
 
 void starsign_select() {
 	int month;
@@ -22,35 +22,44 @@ void starsign_select() {
 
 
 	/*
-	BIRTHSIGN_ADDR is the place in memory where the day of birth is stored.
-	Its value in memory will be the in-game displayed value minus one.
+	   BIRTHSIGN_ADDR is the place in memory where the day of birth is stored.
+	   Its value in memory will be the in-game displayed value minus one.
 
-	JUMP_TO is where to resume execution in the ADOM executable.
+	   JUMP_TO is where to resume execution in the ADOM executable.
 
-         See http://www.adom.de/forums/showthread.php/1134-Choosing-star-sign?p=72882#post72882
-         for information on finding these offsets.
-	*/
-	if (adom_version == 111) {
-		BIRTHSIGN_ADDR = 0x82b61f0;
-		JUMP_TO = 0x813ee80;
+	   See http://www.adom.de/forums/showthread.php/1134-Choosing-star-sign?p=72882#post72882
+	   for information on finding these offsets.
+	 */
+	switch (adom_version) {
+		case 111:
+			BIRTHSIGN_ADDR = 0x82b61f0;
+			JUMP_TO = 0x813ee80;
+			break;
+
+		case 100:
+			BIRTHSIGN_ADDR = 0x82a66e4;
+			JUMP_TO = 0x0813ace0;
+			break;
+
+		case 1203:
+			BIRTHSIGN_ADDR = 0x8283d40;
+			JUMP_TO = 0x081386d0;
+			break;
+
+		case 1204:
+			BIRTHSIGN_ADDR = 0x8285d40;
+			JUMP_TO = 0x08139fb0;
+			break;
+
+		case 1205:
+			BIRTHSIGN_ADDR = 0x8286948;
+			JUMP_TO = 0x0813a860;
+			break;
+
+		default:
+			break;
 	}
-	else if (adom_version == 100) {
-		BIRTHSIGN_ADDR = 0x82a66e4;
-		JUMP_TO = 0x0813ace0;
-	}
-	else if (adom_version == 1203) {
-		BIRTHSIGN_ADDR = 0x8283d40;
-		JUMP_TO = 0x081386d0;
-	}
-	else if (adom_version == 1204) {
-		BIRTHSIGN_ADDR = 0x8285d40;
-		JUMP_TO = 0x08139fb0;
-	}
-	else if (adom_version == 1205) {
-		BIRTHSIGN_ADDR = 0x8286948;
-		JUMP_TO = 0x0813a860;
-	}
-	
+
 	if ((BIRTHSIGN_ADDR == 0) || (JUMP_TO == 0)) {
 		printf("Don't know where to put the birth date or jump to.  Unknown ADOM version %i ?\n", adom_version);
 		return;
