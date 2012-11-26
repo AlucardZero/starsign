@@ -1,5 +1,11 @@
 #include "jaakkos.h"
 
+/*
+  This is the starsign selector hook callback.
+  Ask the user for a month and randomize the day in that month.
+  Alternatively, completely randomize the day ('?').
+*/ 
+
 void starsign_select() {
 	int month;
 	uint32_t BIRTHSIGN_ADDR = 0;
