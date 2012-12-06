@@ -55,7 +55,9 @@ void starsign_select() {
 			BIRTHSIGN_ADDR = 0x8286948;
 			JUMP_TO = 0x0813a860;
 			break;
-
+        	case 1206:
+                	BIRTHSIGN_ADDR = 0x828acbc;
+                	JUMP_TO = 0x0813bf70;
 		default:
 			break;
 	}
