@@ -88,8 +88,11 @@ int main (int argc, char *argv[])
       case 2444316: // 32-bit Debian
         version = "12013";
         break;
-      case 2457248: // 32-bit Debian
+      case 2457248: // 32-bit Debian non-noteye
         version = "12014";
+        break;
+      case 2471612: // 32-bit Debian non-noteye
+        version = "12016";
         break;
       default:
 	version = "0";
