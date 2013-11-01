@@ -78,6 +78,9 @@ void my_load(void) {
         else if (adom_version == 12017) {
                 INJECT_STARSIGN = 0x814a8aa;
         }
+        else if (adom_version == 12018) {
+                INJECT_STARSIGN = 0x814a12a;
+        }
 	if (INJECT_STARSIGN == 0) {
 		printf("ERROR:\nDon't know where to inject my starsign function to.\nUnknown ADOM version %i? Try the 32-bit Debian version.\n", adom_version);
 		return;
